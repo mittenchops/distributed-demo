@@ -37,7 +37,9 @@ with open('wikipedia.csv', 'rU') as csvfile:
 
 # PERFORM MAP OPERATION
 results = []
-results = map(url2count,pages[0:20])
+for p in pages[0:20]:
+    results.append(url2count(p))
 
 # PERFORM REDUCE/AGGREGATION
 ave = sum(results)/len(results)
+print(ave)

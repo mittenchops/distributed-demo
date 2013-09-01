@@ -1,6 +1,5 @@
 from __future__ import division, print_function
 from lxml.html.clean import Cleaner
-from multiprocessing import Pool
 import requests
 import nltk
 import re
@@ -37,11 +36,9 @@ with open('wikipedia.csv', 'rU') as csvfile:
         pages.append(''.join(row))
 
 # PERFORM MAP OPERATION
-p = Pool(16)
 results = []
-results = p.map(url2count,pages[0:20])
+results = map(url2count,pages[0:20])
 
 # PERFORM REDUCE/AGGREGATION
 ave = sum(results)/len(results)
 print(ave)
-
