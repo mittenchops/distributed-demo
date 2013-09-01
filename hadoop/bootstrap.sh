@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-yum -y install python-pip
-pip install requests nltk lxml
+sudo yum -y install python-pip libxml2-devel python-setuptools libxslt-devel gcc gcc-c++ python-devel libxml2 libxslt libxslt-dev
+sudo pip install requests nltk lxml
